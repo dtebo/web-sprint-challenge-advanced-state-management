@@ -17,19 +17,20 @@ const Smurfs = props => {
 
     return (
         <>
-            {!props.smurfs ? (
-                <h3>No Smurfs Found</h3>
-            ) : (
-                props.smurfs.map(smurf => {
-                    return <Smurf key={smurf.id} smurf={smurf} />
-                })
-            )}
+            <div className='smurf-list'>
+                {!props.smurfs ? (
+                    <h3>No Smurfs Found</h3>
+                ) : (
+                    props.smurfs.map(smurf => {
+                        return <Smurf key={smurf.id} smurf={smurf} />
+                    })
+                )}
+            </div>
             <button
                 onClick={(e) => getSmurfs(e)}
             >
                 Get Smurfs
             </button>
-            
         </>
     )
 };

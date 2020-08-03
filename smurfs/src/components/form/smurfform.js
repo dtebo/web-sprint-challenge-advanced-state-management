@@ -1,6 +1,10 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 import useForm from '../../hooks/useForm';
+
+import { postSmurf } from '../../actions/index';
 
 import './form.css';
 
@@ -13,10 +17,14 @@ const initialValues = {
 const SmurfForm = props => {
     const [values, handleChanges, clearForm] = useForm(initialValues);
 
+    const postSmurf = smurf => {
+        props.postSmurf(smurf);
+    };
+
     const handleSubmit = e => {
         e.preventDefault();
 
-
+        postSmurf(values);
     };
 
     return(
@@ -26,6 +34,8 @@ const SmurfForm = props => {
                 type='text'
                 name='name'
                 id='name'
+                value={values.name}
+                onChange={handleChanges}
                 placeholder='Smurf Name'
             />
             <label htmlFor='age'>Age: </label>
@@ -33,6 +43,8 @@ const SmurfForm = props => {
                 type='text'
                 name='age'
                 id='age'
+                value={values.age}
+                onChange={handleChanges}
                 placeholder='Age'
             />
             <label htmlFor='height'>Height: </label>
@@ -40,10 +52,25 @@ const SmurfForm = props => {
                 type='text'
                 name='height'
                 id='height'
+                value={values.height}
+                onChange={handleChanges}
                 placeholder='Height'
             />
+            <button
+                type='submit'
+            >
+                Add Smurf
+            </button>
         </form>
     );
 };
 
-export default SmurfForm;
+const mapStateToProps = state => {
+    return {
+        smurfs: state.smurfs,
+        isFetching: state.isFetching,
+        error: state.error
+    };
+};
+
+export default connect(mapStateToProps, { postSmurf })(SmurfForm);

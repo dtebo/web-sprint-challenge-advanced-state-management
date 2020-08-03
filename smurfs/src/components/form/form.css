@@ -15,3 +15,8 @@ input[type='text']{
     align-self: stretch;
     padding-left: 0;
 }
+
+button{
+    margin-top: 20px;
+    align-self: stretch;
+}
