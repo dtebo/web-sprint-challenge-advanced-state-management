@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 import "./App.css";
+
+import Smurfs from '../components/smurfs/smurfs';
+
 class App extends Component {
   constructor(props){
     super(props);

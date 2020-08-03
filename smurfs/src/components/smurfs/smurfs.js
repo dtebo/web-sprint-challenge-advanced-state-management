@@ -4,13 +4,15 @@ import { connect } from 'react-redux';
 
 import { getSmurfs } from '../actions/index';
 
-const Smurfs = props => {
+const Smurfs = () => {
     return (
         <>
             {!props.smurfs ? (
                 <h3>No Smurfs Found</h3>
             ) : (
-                
+                {props.smurfs.map(smurf => {
+                    return <Smurf smurf={smurf} />
+                })}
             )}
         </>
     )
