@@ -1,0 +1,17 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    width: 400px;
+    margin: 0 auto;
+}
+
+label{
+    align-self: start;
+    margin: 10px 0;
+}
+
+input[type='text']{
+    align-self: stretch;
+    padding-left: 0;
+}

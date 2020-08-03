@@ -29,7 +29,7 @@ const Smurfs = props => {
             >
                 Get Smurfs
             </button>
-            <button</button>
+            
         </>
     )
 };
