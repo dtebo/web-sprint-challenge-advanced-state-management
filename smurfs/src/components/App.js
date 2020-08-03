@@ -5,15 +5,6 @@ import "./App.css";
 import Smurfs from '../components/smurfs/smurfs';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-  }
-
-  getSmurfs(e){
-    e.preventDefault();
-
-    this.props.getSmurfs();
-  }
 
   render() {
     return (
