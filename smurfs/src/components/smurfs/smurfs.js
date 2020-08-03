@@ -6,6 +6,8 @@ import { getSmurfs } from '../../actions/index';
 
 import Smurf from './smurf';
 
+import './smurfs.css';
+
 const Smurfs = props => {
     const getSmurfs = e => {
         e.preventDefault();
