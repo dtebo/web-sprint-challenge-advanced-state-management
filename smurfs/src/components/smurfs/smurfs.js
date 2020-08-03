@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { getSmurfs } from '../../actions/index';
@@ -30,6 +30,9 @@ const Smurfs = props => {
                 onClick={(e) => getSmurfs(e)}
             >
                 Get Smurfs
+            </button>
+            <button>
+                <Link to='/form'>Add Smurf</Link>
             </button>
         </>
     )

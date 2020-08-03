@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import useForm from '../../hooks/useForm';
@@ -25,6 +25,8 @@ const SmurfForm = props => {
         e.preventDefault();
 
         postSmurf(values);
+
+        return <Redirect to='/' />
     };
 
     return(
