@@ -26,7 +26,7 @@ const SmurfForm = props => {
 
         postSmurf(values);
 
-        return <Redirect to='/' />
+        props.history.push('/');
     };
 
     return(

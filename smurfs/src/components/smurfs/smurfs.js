@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -9,6 +9,10 @@ import Smurf from './smurf';
 import './smurfs.css';
 
 const Smurfs = props => {
+    useEffect(() => {
+        props.getSmurfs();
+    }, []);
+    
     const getSmurfs = e => {
         e.preventDefault();
 
